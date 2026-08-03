@@ -1,0 +1,14 @@
+# Ignore LibreOffice/Excel lock files
+.~lock.*
+~*
+
+# Ignore python cache files
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.uv/
+
+# Ignore local config/temp folders
+.gemini/
+scratch/
