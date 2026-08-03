@@ -1219,7 +1219,7 @@ html_content = f"""<!DOCTYPE html>
     function createBarElements() {{
         const gridHtml = gridContainer.outerHTML;
         chartContainer.innerHTML = gridHtml;
-        gridContainer_ref = document.getElementById('grid-lines-container');
+        const gridContainer_ref = document.getElementById('grid-lines-container');
 
         etfs.forEach(etf => {{
             const row = document.createElement('div');
