@@ -1731,4 +1731,7 @@ output_path = "bar_chart_race.html"
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_content)
 
-print(f"[SUCCESS] Transposed and updated Bar Chart Race HTML successfully saved to {output_path}")
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print(f"[SUCCESS] Transposed and updated Bar Chart Race HTML saved to {output_path} and index.html")
