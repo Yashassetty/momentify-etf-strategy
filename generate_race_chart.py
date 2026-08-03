@@ -846,7 +846,7 @@ html_content = f"""<!DOCTYPE html>
         <div class="stats-panel">
             <div class="stat-box">
                 <div class="stat-label">Start Date</div>
-                <div class="stat-value" style="color: var(--text-main); font-size: 1.2rem;">01-Jun-2022</div>
+                <div class="stat-value" id="start-date-display" style="color: var(--text-main); font-size: 1.2rem;">--/--/----</div>
             </div>
             <div class="stat-box">
                 <div class="stat-label">End Date</div>
@@ -1166,6 +1166,7 @@ html_content = f"""<!DOCTYPE html>
         timelineScrubber.max = dates.length - 1;
         startDateLbl.textContent = dates[0];
         endDateLbl.textContent = dates[dates.length - 1];
+        document.getElementById('start-date-display').textContent = dates[0];
 
         createBarElements();
         updateFrame();
