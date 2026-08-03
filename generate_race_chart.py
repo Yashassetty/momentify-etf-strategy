@@ -1494,8 +1494,16 @@ html_content = f"""<!DOCTYPE html>
             const entryIdx = dates.indexOf(trade.entryDate);
             const exitIdx = dates.indexOf(trade.exitDate);
 
+            // Determine if trade is active/running on currentDate
+            let isRunning = false;
+            if (trade.exitReason === 'EOP') {{
+                isRunning = (entryIdx !== -1 && exitIdx !== -1 && entryIdx <= currentIdx && currentIdx <= exitIdx);
+            }} else {{
+                isRunning = (entryIdx !== -1 && exitIdx !== -1 && entryIdx <= currentIdx && currentIdx < exitIdx);
+            }}
+
             // 1. Running stocks calculation (open positions on currentDate)
-            if (entryIdx !== -1 && exitIdx !== -1 && entryIdx <= currentIdx && exitIdx > currentIdx) {{
+            if (isRunning) {{
                 const currentPrice = prices[trade.stock] ? prices[trade.stock][currentDate] : null;
                 const finalPrice = currentPrice !== null ? currentPrice : trade.entryPrice;
                 const pnl = (finalPrice - trade.entryPrice) * trade.qty;
@@ -1511,8 +1519,8 @@ html_content = f"""<!DOCTYPE html>
                 }});
             }}
 
-            // 2. Exited stocks calculation (closed on currentDate)
-            if (trade.exitDate === currentDate) {{
+            // 2. Exited stocks calculation (closed on currentDate, excluding EOP)
+            if (trade.exitDate === currentDate && trade.exitReason !== 'EOP') {{
                 const pct = ((trade.exitPrice / trade.entryPrice) - 1.0) * 100.0;
                 exitedTrades.push({{
                     stock: trade.stock,
