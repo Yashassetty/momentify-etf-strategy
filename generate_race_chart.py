@@ -1533,7 +1533,7 @@ html_content = f"""<!DOCTYPE html>
             // 1. Running stocks calculation (open positions on currentDate)
             if (isRunning) {{
                 const currentPrice = prices[trade.stock] ? prices[trade.stock][currentDate] : null;
-                const finalPrice = currentPrice !== null ? currentPrice : trade.entryPrice;
+                const finalPrice = (currentPrice !== null && currentPrice !== undefined) ? currentPrice : trade.entryPrice;
                 const pnl = (finalPrice - trade.entryPrice) * trade.qty;
                 const pct = ((finalPrice / trade.entryPrice) - 1.0) * 100.0;
 
