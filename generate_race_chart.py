@@ -31,47 +31,47 @@ for d in dates:
 
 # 5. Parse the trades log to identify active positions at each timeline step
 trades_data = """Stock Name	Entry Price	Exit Price	Qty	P&L	Entry Date	Exit Date	Exit Reason
-PSUBNKBEES	28.3	27.03	3533	-4486.91	01 June 2022	13 June 2022	Rebalance
-NIFTYBEES	171.87	194.09	556	12354.32	13 June 2022	16 August 2022	Rebalance
-GOLDBEES	43.52	43.85	2297	758.01	01 June 2022	29 August 2022	Rebalance
-LOWVOLIETF	13.47	13.98	7422	3725.84	01 June 2022	19 September 2022	Rebalance
-PVTBANIETF	20.82	22.14	4982	6586.2	19 September 2022	22 May 2023	Rebalance
-CPSEETF	35.08	45.34	2850	29241.0	01 June 2022	24 July 2023	Rebalance
-FMCGIETF	43.73	54.4	2468	26326.16	16 August 2022	31 July 2023	Rebalance
-AUTOBEES	140.31	162.56	786	17488.5	22 May 2023	03 October 2023	Rebalance
-HEALTHIETF	96.52	97.28	1391	1057.16	31 July 2023	16 October 2023	Rebalance
-MID150BEES	155.43	183.36	870	24299.1	16 October 2023	05 February 2024	Rebalance
-INFRAIETF	80.92	89.95	1972	17807.16	05 February 2024	10 June 2024	Rebalance
-ICICIB22	48.42	111.34	2065	129929.8	01 June 2022	01 July 2024	Rebalance
-PSUBNKBEES	32.52	81.67	3097	152217.55	29 August 2022	01 July 2024	Rebalance
-MAKEINDIA	148.89	153.22	1621	7018.93	01 July 2024	02 September 2024	Rebalance
-ALPHA	32.0	54.88	4039	92412.32	24 July 2023	07 October 2024	Rebalance
-AUTOBEES	254.15	257.95	698	2652.4	10 June 2024	21 October 2024	Rebalance
-JUNIORBEES	767.87	741.01	314	-8434.04	01 July 2024	04 November 2024	Rebalance
-CPSEETF	52.88	87.59	2416	83859.36	03 October 2023	18 November 2024	Rebalance
-PHARMABEES	23.5	22.67	10587	-8787.21	02 September 2024	16 December 2024	Rebalance
-HEALTHIETF	147.53	137.75	1502	-14689.56	07 October 2024	17 February 2025	Rebalance
-TNIDETF	92.67	86.88	2511	-14538.69	04 November 2024	24 February 2025	Rebalance
-ITBEES	44.49	40.56	4048	-15908.64	21 October 2024	03 March 2025	Rebalance
-LIQUIDCASE	107.32	108.28	1530	1468.8	03 March 2025	28 April 2025	Rebalance
-SILVERBEES	87.27	94.55	2750	20020.0	16 December 2024	26 May 2025	Rebalance
-LTGILTBEES	27.56	28.94	7509	10362.42	17 February 2025	26 May 2025	Rebalance
-GILT5YBEES	59.53	62.4	3664	10515.68	24 February 2025	26 May 2025	Rebalance
-PVTBANIETF	27.67	28.37	8504	5952.8	26 May 2025	30 June 2025	Rebalance
-BANKBEES	569.8	575.55	412	2369.0	26 May 2025	18 August 2025	Rebalance
-BFSI	26.92	27.21	6155	1784.95	28 April 2025	25 August 2025	Rebalance
-HDFCSML250	179.04	171.79	1350	-9787.5	30 June 2025	25 August 2025	Rebalance
-TNIDETF	95.21	93.32	2097	-3963.33	25 August 2025	01 September 2025	Rebalance
-MODEFENCE	83.3	86.58	2352	7714.56	01 September 2025	29 September 2025	Rebalance
-AUTOBEES	260.88	283.55	765	17342.55	25 August 2025	19 January 2026	Rebalance
-FINIETF	29.51	32.66	7974	25118.1	26 May 2025	23 February 2026	Rebalance
-PSUBNKBEES	82.53	94.14	2467	28641.87	29 September 2025	04 May 2026	Rebalance
-ICICIB22	127.24	121.12	2046	-12521.52	23 February 2026	11 May 2026	Rebalance
-GOLDBEES	62.9	116.43	3364	180074.92	18 November 2024	29 June 2026	Rebalance
-SILVERBEES	110.06	206.5	2155	207828.2	18 August 2025	03 August 2026	EOP
-METALIETF	11.65	12.99	18624	24956.16	19 January 2026	03 August 2026	EOP
-MODEFENCE	98.62	102.24	2356	8528.71	04 May 2026	03 August 2026	EOP
-MOCAPITAL	55.12	52.9	4495	-9978.89	11 May 2026	03 August 2026	EOP
+PSUBNKBEES	28.3	27.03	3533	-4486.91	01 June 2022	13 June 2022	Rebalance
+NIFTYBEES	171.87	194.09	556	12354.32	13 June 2022	16 August 2022	Rebalance
+GOLDBEES	43.52	43.85	2297	758.01	01 June 2022	29 August 2022	Rebalance
+LOWVOLIETF	13.47	13.98	7422	3725.84	01 June 2022	19 September 2022	Rebalance
+PVTBANIETF	20.82	22.14	4982	6586.2	19 September 2022	22 May 2023	Rebalance
+CPSEETF	35.08	45.34	2850	29241.0	01 June 2022	24 July 2023	Rebalance
+FMCGIETF	43.73	54.4	2468	26326.16	16 August 2022	31 July 2023	Rebalance
+AUTOBEES	140.31	162.56	786	17488.5	22 May 2023	03 October 2023	Rebalance
+HEALTHIETF	96.52	97.28	1391	1057.16	31 July 2023	16 October 2023	Rebalance
+MID150BEES	155.43	183.36	870	24299.1	16 October 2023	05 February 2024	Rebalance
+INFRAIETF	80.92	89.95	1972	17807.16	05 February 2024	10 June 2024	Rebalance
+ICICIB22	48.42	111.34	2065	129929.8	01 June 2022	01 July 2024	Rebalance
+PSUBNKBEES	32.52	81.67	3097	152217.55	29 August 2022	01 July 2024	Rebalance
+MAKEINDIA	148.89	153.22	1621	7018.93	01 July 2024	02 September 2024	Rebalance
+ALPHA	32.0	54.88	4039	92412.32	24 July 2023	07 October 2024	Rebalance
+AUTOBEES	254.15	257.95	698	2652.4	10 June 2024	21 October 2024	Rebalance
+JUNIORBEES	767.87	741.01	314	-8434.04	01 July 2024	04 November 2024	Rebalance
+CPSEETF	52.88	87.59	2416	83859.36	03 October 2023	18 November 2024	Rebalance
+PHARMABEES	23.5	22.67	10587	-8787.21	02 September 2024	16 December 2024	Rebalance
+HEALTHIETF	147.53	137.75	1502	-14689.56	07 October 2024	17 February 2025	Rebalance
+TNIDETF	92.67	86.88	2511	-14538.69	04 November 2024	24 February 2025	Rebalance
+ITBEES	44.49	40.56	4048	-15908.64	21 October 2024	03 March 2025	Rebalance
+LIQUIDCASE	107.32	108.28	1530	1468.8	03 March 2025	28 April 2025	Rebalance
+SILVERBEES	87.27	94.55	2750	20020.0	16 December 2024	26 May 2025	Rebalance
+LTGILTBEES	27.56	28.94	7509	10362.42	17 February 2025	26 May 2025	Rebalance
+GILT5YBEES	59.53	62.4	3664	10515.68	24 February 2025	26 May 2025	Rebalance
+PVTBANIETF	27.67	28.37	8504	5952.8	26 May 2025	30 June 2025	Rebalance
+BANKBEES	569.8	575.55	412	2369.0	26 May 2025	18 August 2025	Rebalance
+BFSI	26.92	27.21	6155	1784.95	28 April 2025	25 August 2025	Rebalance
+HDFCSML250	179.04	171.79	1350	-9787.5	30 June 2025	25 August 2025	Rebalance
+TNIDETF	95.21	93.32	2097	-3963.33	25 August 2025	01 September 2025	Rebalance
+MODEFENCE	83.3	86.58	2352	7714.56	01 September 2025	29 September 2025	Rebalance
+AUTOBEES	260.88	283.55	765	17342.55	25 August 2025	19 January 2026	Rebalance
+FINIETF	29.51	32.66	7974	25118.1	26 May 2025	23 February 2026	Rebalance
+PSUBNKBEES	82.53	94.14	2467	28641.87	29 September 2025	04 May 2026	Rebalance
+ICICIB22	127.24	121.12	2046	-12521.52	23 February 2026	11 May 2026	Rebalance
+GOLDBEES	62.9	116.43	3364	180074.92	18 November 2024	29 June 2026	Rebalance
+SILVERBEES	110.06	206.5	2155	207828.2	18 August 2025	03 August 2026	EOP
+METALIETF	11.65	12.99	18624	24956.16	19 January 2026	03 August 2026	EOP
+MODEFENCE	98.62	102.24	2356	8528.71	04 May 2026	03 August 2026	EOP
+MOCAPITAL	55.12	52.9	4495	-9978.89	11 May 2026	03 August 2026	EOP
 PHARMABEES	25.9	27.34	15124	21778.56	29 June 2026	03 August 2026	EOP"""
 
 df_trades = pd.read_csv(io.StringIO(trades_data), sep="\t")
@@ -87,6 +87,38 @@ for d_str in dates:
         if trade['Entry Date'] <= d < trade['Exit Date']:
             active_stocks.append(trade['Stock Name'])
     active_trades_dict[d_str] = active_stocks
+
+# Parse the spreadsheet's own total P&L timeline from ExitTrades (4).csv
+timeline_pnl = {}
+with open("ExitTrades (4).csv", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+timeline_start_idx = -1
+for i, line in enumerate(lines):
+    if "Unrealised PL" in line and "Realised PL" in line:
+        timeline_start_idx = i
+        break
+
+if timeline_start_idx != -1:
+    timeline_lines = [lines[timeline_start_idx]]
+    for line in lines[timeline_start_idx + 1:]:
+        line_str = line.strip().lower()
+        if "performance" in line_str or "total p&l" in line_str or not line.strip():
+            break
+        timeline_lines.append(line)
+        
+    csv_data = "".join(timeline_lines)
+    df_time = pd.read_csv(io.StringIO(csv_data))
+    df_time = df_time.dropna(subset=['Date'])
+    df_time['Date'] = df_time['Date'].apply(lambda x: re.sub(r'\(.*?\)', '', str(x)).strip())
+    df_time['ParsedDate'] = pd.to_datetime(df_time['Date'], format='%d %B %Y').dt.strftime('%d-%b-%Y')
+    
+    # Reindex series to match the full dates array (with forward filling)
+    time_series = df_time.set_index('ParsedDate')['Total PL']
+    all_dates_index = pd.Index(dates, name='ParsedDate')
+    # Combine and forward fill to cover any trade-date points not explicitly in the timeline table
+    time_series_reindexed = time_series.reindex(all_dates_index).ffill().bfill()
+    timeline_pnl = time_series_reindexed.to_dict()
 
 # Serialize trades details for JS tables
 trades_list = []
@@ -115,6 +147,7 @@ active_trades_json = json.dumps(active_trades_dict)
 nifty_prices_json = json.dumps(nifty_prices)
 prices_json = json.dumps(prices_dict)
 trades_json = json.dumps(trades_list)
+excel_total_pnl_json = json.dumps(timeline_pnl)
 
 html_content = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1098,6 +1131,7 @@ html_content = f"""<!DOCTYPE html>
     const niftyPrices = {nifty_prices_json};
     const prices = {prices_json};
     const tradesList = {trades_json};
+    const excelTotalPnl = {excel_total_pnl_json};
     const globalMaxAbs = {abs_max_scale};
 
     // App State
@@ -1280,11 +1314,8 @@ html_content = f"""<!DOCTYPE html>
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         const diffYears = diffDays / 365.25;
 
-        // Compute total portfolio P&L
-        let totalPnl = 0.0;
-        etfs.forEach(etf => {{
-            totalPnl += dateData[etf] || 0.0;
-        }});
+        // Fetch total portfolio P&L directly from Excel's dynamic timeline P&L mapping
+        const totalPnl = excelTotalPnl[currentDate] !== undefined ? excelTotalPnl[currentDate] : 0.0;
 
         // Format and set adaptive text for Bottom Stats
         const formattedTotal = formatCurrency(totalPnl);
@@ -1312,15 +1343,12 @@ html_content = f"""<!DOCTYPE html>
             portfolioCagrDisplay.className = 'bottom-stat-value';
         }}
 
-        // Dynamic Max Drawdown Calculation
+        // Dynamic Max Drawdown Calculation based strictly on Excel portfolio timeline values
         let peakValue = 500000.0;
         let maxDrawdown = 0.0;
         for (let i = 0; i <= currentIndex; i++) {{
             const date = dates[i];
-            let stepPnl = 0.0;
-            etfs.forEach(etf => {{
-                stepPnl += dataset[date][etf] || 0.0;
-            }});
+            const stepPnl = excelTotalPnl[date] !== undefined ? excelTotalPnl[date] : 0.0;
             const portfolioValue = 500000.0 + stepPnl;
             if (portfolioValue > peakValue) {{
                 peakValue = portfolioValue;
@@ -1630,16 +1658,6 @@ html_content = f"""<!DOCTYPE html>
     function formatCurrency(val) {{
         const sign = val >= 0 ? '+' : '-';
         return `${{sign}}₹${{Math.abs(val).toLocaleString('en-IN', {{ minimumFractionDigits: 2, maximumFractionDigits: 2 }})}}`;
-    }}
-
-    function formatCurrencyShort(val) {{
-        const absVal = Math.abs(val);
-        if (absVal >= 100000) {{
-            return `₹${{(absVal / 100000).toFixed(1)}}L`;
-        }} else if (absVal >= 1000) {{
-            return `₹${{(absVal / 1000).toFixed(0)}}K`;
-        }}
-        return `₹${{absVal.toFixed(0)}}`;
     }}
 
     // Playback loop
